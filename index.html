@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tree of Savior Exp Card Calculator</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="header"><img src="icon_item_expcard.png"></div>
+	<div class="wrapper">
+		<div class="levelcol">
+			<span><label for="level">Level:</label><input id='level' data-bind='value: char._base, valueUpdate: "input"'></span>
+			<span><label for="levelp">Level %:</label><input id='levelp' data-bind='value: char._baseP, valueUpdate: "input"'></span>
+			<span><label for="class">Class:</label><select id='class' data-bind='options: clevels, value: char._class, valueUpdate: "input"'></select></span>
+			<span><label for="classp">Class %:</label><input id='classp' data-bind='value: char._classP, valueUpdate: "input"'></span>
+			<span><label for="rank">Class Rank:</label><select id='rank' data-bind='options: ranks, value: char._classRank, valueUpdate: "input"'></select></span>
+		</div>
+		
+		<div class="cardscol">        
+			<span><label for="card1">Rank 1 Cards:</label><input id='card1' data-bind='value: cards._card1, valueUpdate: "input"'></span>
+			<span><label for="card2">Rank 2 Cards:</label><input id='card2' data-bind='value: cards._card2, valueUpdate: "input"'></span>
+			<span><label for="card3">Rank 3 Cards:</label><input id='card3' data-bind='value: cards._card3, valueUpdate: "input"'></span>
+			<span><label for="card4">Rank 4 Cards:</label><input id='card4' data-bind='value: cards._card4, valueUpdate: "input"'></span>
+			<span><label for="card5">Rank 5 Cards:</label><input id='card5' data-bind='value: cards._card5, valueUpdate: "input"'></span>
+			<span><label for="card6">Rank 6 Cards:</label><input id='card6' data-bind='value: cards._card6, valueUpdate: "input"'></span>
+			<span><label for="card7">Rank 7 Cards:</label><input id='card7' data-bind='value: cards._card7, valueUpdate: "input"'></span>
+			<span><label for="card8">Rank 8 Cards:</label><input id='card8' data-bind='value: cards._card8, valueUpdate: "input"'></span>
+			<span><label for="card9">Rank 9 Cards:</label><input id='card9' data-bind='value: cards._card9, valueUpdate: "input"'></span>
+			<span><label for="card10">Rank 10 Cards:</label><input id='card10' data-bind='value: cards._card10, valueUpdate: "input"'></span>
+			<span><label for="card11">Rank 11 Cards:</label><input id='card11' data-bind='value: cards._card11, valueUpdate: "input"'></span>
+			<span><label for="card12">Rank 12 Cards:</label><input id='card12' data-bind='value: cards._card12, valueUpdate: "input"'></span>
+			<span><label for="card13">Special Cards:</label><input id='card13' data-bind='value: cards._card13, valueUpdate: "input"'></span>
+		</div>
+    </div>
+    <div class="bottominfo">
+        <p>Base: <span data-bind='text: char._base'></span> ➡ <span data-bind='text: newBaseLevel'></span> (<span data-bind='text: char._baseExp'></span> ➡ <span data-bind='text: newBaseExp'></span>)</p>
+        <p>Class: <span data-bind='text: char._class'></span> ➡ <span data-bind='text: newClassLevel'></span> (<span data-bind='text: char._classExp'></span> ➡ <span data-bind='text: newClassExp'></span>)</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="app.js"></script> 
+</body>
+</html>
