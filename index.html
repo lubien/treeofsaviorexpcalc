@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>Tree of Savior Exp Card Calculator</title>
+    
+    <link rel="canonical"/>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/bootstrap-material-design.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="header"><img src="assets/img/icon_item_expcard.png"></div>
+    <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 ">
+        <div class="col-md-4 .col-xm-12 form-horizontal">
+            <fieldset>
+                <legend>Character</legend>
+                <span class="form-group">
+                    <label class="control-label" for="level">Level:</label>
+                    <input type="number" id='level' class="form-control" data-bind='value: char._base, valueUpdate: "input"'>
+                </span>
+                <span class="form-group">
+                    <label class="control-label" for="levelp">Level %:</label>
+                    <input type="number" id='levelp' class="form-control" data-bind='value: char._baseP, valueUpdate: "input"'>
+                </span>
+                <span class="form-group">
+                    <label class="control-label" for="class">Class:</label>
+                    <select id='class' class="form-control" class="form-control" data-bind='options: clevels, value: char._class, valueUpdate: "input"'></select>
+                </span>
+                <span class="form-group">
+                    <label class="control-label" for="classp">Class %:</label>
+                    <input type="number" id='classp' class="form-control" data-bind='value: char._classP, valueUpdate: "input"'>
+                </span>
+                <span class="form-group">
+                    <label class="control-label" for="rank">Class Rank:</label>
+                    <select id='rank' class="form-control"  data-bind='options: ranks, value: char._classRank, valueUpdate: "input"'></select>
+                </span>
+            </fieldset>
+        </div>
+
+        <div class="col-md-8 .col-xm-12 form-horizontal">
+            <fieldset>
+                <legend>Cards</legend>
+                <div class="col-md-6 .col-sm-12">
+                    <span class="form-group "><label class="control-label" for="card1">Rank 1:</label><input type="number" id='card1' class="form-control" data-bind='value: cards._card1, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card2">Rank 2:</label><input type="number" id='card2' class="form-control" data-bind='value: cards._card2, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card3">Rank 3:</label><input type="number" id='card3' class="form-control" data-bind='value: cards._card3, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card4">Rank 4:</label><input type="number" id='card4' class="form-control" data-bind='value: cards._card4, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card5">Rank 5:</label><input type="number" id='card5' class="form-control" data-bind='value: cards._card5, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card6">Rank 6:</label><input type="number" id='card6' class="form-control" data-bind='value: cards._card6, valueUpdate: "input"'></span>
+                </div>
+
+                <div class="col-md-6 .col-sm-12">
+                    <span class="form-group"><label class="control-label" for="card7">Rank 7:</label><input type="number" id='card7' class="form-control" data-bind='value: cards._card7, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card8">Rank 8:</label><input type="number" id='card8' class="form-control" data-bind='value: cards._card8, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card9">Rank 9:</label><input type="number" id='card9' class="form-control" data-bind='value: cards._card9, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card10">Rank 10:</label><input type="number" id='card10' class="form-control" data-bind='value: cards._card10, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card11">Rank 11:</label><input type="number" id='card11' class="form-control" data-bind='value: cards._card11, valueUpdate: "input"'></span>
+                    <span class="form-group"><label class="control-label" for="card12">Rank 12:</label><input type="number" id='card12' class="form-control" data-bind='value: cards._card12, valueUpdate: "input"'></span>
+                </div>
+                <span class="form-group"><label class="control-label" for="card13">Special Cards:</label><input type="number" id='card13' class="form-control" data-bind='value: cards._card13, valueUpdate: "input"'></span>
+            </fieldset>
+        </div>
+    </div>
+    <div class="bottominfo">
+        <p><b>Base</b>: <span data-bind='text: char._base'></span> ➡ <span data-bind='text: newBaseLevel'></span> (<span data-bind='text: char._baseExp'></span> ➡ <span data-bind='text: newBaseExp'></span>)</p>
+        <p><b>Class</b>: <span data-bind='text: char._class'></span> ➡ <span data-bind='text: newClassLevel'></span> (<span data-bind='text: char._classExp'></span> ➡ <span data-bind='text: newClassExp'></span>)</p>
+    </div>
+    
+    <script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="assets/js/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="assets/js/app.js"></script> 
+</body>
+</html>

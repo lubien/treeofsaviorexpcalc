@@ -1,0 +1,23 @@
+.header img{
+	display: block;
+    margin: 12px auto;
+}
+
+.bottominfo {
+    color: black;
+    background: #BBDEFB;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+    .bottominfo p {
+        width: 100%;
+        text-align: center;
+    }
+}
