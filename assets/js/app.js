@@ -50,12 +50,21 @@ var Character = function(){
 	
 	//calculate the total base experience using the exp table provided;
 	self._baseExp	= ko.computed(function(){
-		return parseInt(BASETABLE[self._base()][2] + (BASETABLE[parseInt(self._base()) + 1][1] * (self._baseP()/100)));
+		return parseFloat(BASETABLE[self._base()][2] + (BASETABLE[parseInt(self._base()) + 1][1] * (self._baseP()/100)));
 	});
 	
 	//calculate the total class experience using the exp table provided;
 	self._classExp	= ko.computed(function(){
-		return parseInt(CLASSTABLE[self._classRank()][self._class()][2] + (CLASSTABLE[self._classRank()][parseInt(self._class()) + 1][1] * (self._classP()/100)));
+		return parseFloat(CLASSTABLE[self._classRank()][self._class()][2] + (CLASSTABLE[self._classRank()][parseInt(self._class()) + 1][1] * (self._classP()/100)));
+	});
+    
+    //remove the decimal value from the experience variables for better displaying
+    self._displayBaseExp	= ko.computed(function(){
+		return parseInt(self._baseExp());
+	});
+    
+    self._displayClassExp	= ko.computed(function(){
+		return parseInt(self._classExp()); 
 	});
 }
 
@@ -79,36 +88,36 @@ var Cards = function(){
 	
 	//calculate the total avalible base experience from cards
 	self._tBaseExp 	= ko.computed(function() {
-		return 	parseInt(self._card1()) * CARDTABLE[1][1] +
-				parseInt(self._card2()) * CARDTABLE[2][1] +
-				parseInt(self._card3()) * CARDTABLE[3][1] +
-				parseInt(self._card4()) * CARDTABLE[4][1] +
-				parseInt(self._card5()) * CARDTABLE[5][1] +
-				parseInt(self._card6()) * CARDTABLE[6][1] +
-				parseInt(self._card7()) * CARDTABLE[7][1] +
-				parseInt(self._card8()) * CARDTABLE[8][1] +
-				parseInt(self._card9()) * CARDTABLE[9][1] +
-				parseInt(self._card10()) * CARDTABLE[10][1] +
-				parseInt(self._card11()) * CARDTABLE[11][1] +
-				parseInt(self._card12()) * CARDTABLE[12][1] +
-				parseInt(self._card13()) * CARDTABLE[13][1]
+		return 	parseFloat(self._card1()) * CARDTABLE[1][1] +
+				parseFloat(self._card2()) * CARDTABLE[2][1] +
+				parseFloat(self._card3()) * CARDTABLE[3][1] +
+				parseFloat(self._card4()) * CARDTABLE[4][1] +
+				parseFloat(self._card5()) * CARDTABLE[5][1] +
+				parseFloat(self._card6()) * CARDTABLE[6][1] +
+				parseFloat(self._card7()) * CARDTABLE[7][1] +
+				parseFloat(self._card8()) * CARDTABLE[8][1] +
+				parseFloat(self._card9()) * CARDTABLE[9][1] +
+				parseFloat(self._card10()) * CARDTABLE[10][1] +
+				parseFloat(self._card11()) * CARDTABLE[11][1] +
+				parseFloat(self._card12()) * CARDTABLE[12][1] +
+				parseFloat(self._card13()) * CARDTABLE[13][1]
 	});
 	
 	//calculate the total avalible class experience from cards
 	self._tClassExp	= ko.computed(function() {
-		return 	parseInt(self._card1()) * CARDTABLE[1][2] +
-				parseInt(self._card2()) * CARDTABLE[2][2] +
-				parseInt(self._card3()) * CARDTABLE[3][2] +
-				parseInt(self._card4()) * CARDTABLE[4][2] +
-				parseInt(self._card5()) * CARDTABLE[5][2] +
-				parseInt(self._card6()) * CARDTABLE[6][2] +
-				parseInt(self._card7()) * CARDTABLE[7][2] +
-				parseInt(self._card8()) * CARDTABLE[8][2] +
-				parseInt(self._card9()) * CARDTABLE[9][2] +
-				parseInt(self._card10()) * CARDTABLE[10][2] +
-				parseInt(self._card11()) * CARDTABLE[11][2] +
-				parseInt(self._card12()) * CARDTABLE[12][2] +
-				parseInt(self._card13()) * CARDTABLE[13][2]
+		return 	parseFloat(self._card1()) * CARDTABLE[1][2] +
+				parseFloat(self._card2()) * CARDTABLE[2][2] +
+				parseFloat(self._card3()) * CARDTABLE[3][2] +
+				parseFloat(self._card4()) * CARDTABLE[4][2] +
+				parseFloat(self._card5()) * CARDTABLE[5][2] +
+				parseFloat(self._card6()) * CARDTABLE[6][2] +
+				parseFloat(self._card7()) * CARDTABLE[7][2] +
+				parseFloat(self._card8()) * CARDTABLE[8][2] +
+				parseFloat(self._card9()) * CARDTABLE[9][2] +
+				parseFloat(self._card10()) * CARDTABLE[10][2] +
+				parseFloat(self._card11()) * CARDTABLE[11][2] +
+				parseFloat(self._card12()) * CARDTABLE[12][2] +
+				parseFloat(self._card13()) * CARDTABLE[13][2]
 	});
 }
 
@@ -124,7 +133,7 @@ function AppViewModel() {
 	
 	//calculate the character base experience after the cards are used
 	self.newBaseExp 	= ko.computed(function(){
-		return parseInt(self.char._baseExp()) + parseInt(self.cards._tBaseExp());
+		return parseFloat(self.char._baseExp()) + parseFloat(self.cards._tBaseExp());
 	});
 	
 	//calculate the character base level after the cards are used
@@ -139,7 +148,7 @@ function AppViewModel() {
 	
 	//calculate the character class experience after the cards are used
 	self.newClassExp	= ko.computed(function(){
-		return parseInt(self.char._classExp()) + parseInt(self.cards._tClassExp());
+		return parseFloat(self.char._classExp()) + parseFloat(self.cards._tClassExp());
 	});
 	
 	//calculate the character class level after the cards are used
@@ -150,6 +159,15 @@ function AppViewModel() {
 			}
 		}
 		return 15;
+	});
+    
+    //remove the decimal value from the experience variables for better displaying
+    self.displayNewBaseExp 	= ko.computed(function(){
+		return parseInt(self.newBaseExp());
+	});
+    
+    self.displayNewClassExp = ko.computed(function(){
+		return parseInt(self.newBaseExp());
 	});
 };
 
