@@ -39,11 +39,11 @@
                 <legend>Character</legend>
                 <span class="form-group">
                     <label class="control-label" for="level">Level:</label>
-                    <input type="number" id='level' class="form-control" data-bind='value: char._base, valueUpdate: "input"'>
+                    <input type="number" min="1" id='level' class="form-control" data-bind='value: char._base, valueUpdate: "input"'>
                 </span>
                 <span class="form-group">
                     <label class="control-label" for="levelp">Level %:</label>
-                    <input type="number" id='levelp' class="form-control" data-bind='value: char._baseP, valueUpdate: "input"'>
+                    <input type="number" min="0" step="0.01" id='levelp' class="form-control" data-bind='value: char._baseP, valueUpdate: "input"'>
                 </span>
                 <span class="form-group">
                     <label class="control-label" for="class">Class:</label>
@@ -51,7 +51,7 @@
                 </span>
                 <span class="form-group">
                     <label class="control-label" for="classp">Class %:</label>
-                    <input type="number" id='classp' class="form-control" data-bind='value: char._classP, valueUpdate: "input"'>
+                    <input type="number" min="0" step="0.01" id='classp' class="form-control" data-bind='value: char._classP, valueUpdate: "input"'>
                 </span>
                 <span class="form-group">
                     <label class="control-label" for="rank">Class Rank:</label>

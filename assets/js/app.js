@@ -42,7 +42,7 @@ ko.extenders.numeric = function(target, precision) {
 var Character = function(){
 	var self = this;
 	
-	self._base 		= ko.observable(0).extend({ numeric: 0 });
+	self._base 		= ko.observable(1).extend({ numeric: 0 });
 	self._baseP 	= ko.observable(0).extend({ numeric: 2 });
 	self._class 	= ko.observable(1).extend({ numeric: 0 });
 	self._classP 	= ko.observable(0).extend({ numeric: 2 });
