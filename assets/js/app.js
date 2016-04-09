@@ -42,11 +42,11 @@ ko.extenders.numeric = function(target, precision) {
 var Character = function(){
 	var self = this;
 	
-	self._base 		= ko.observable(1).extend({ numeric: 0 });
-	self._baseP 	= ko.observable(0).extend({ numeric: 2 });
-	self._class 	= ko.observable(1).extend({ numeric: 0 });
-	self._classP 	= ko.observable(0).extend({ numeric: 2 });
-	self._classRank	= ko.observable(1).extend({ numeric: 0 });
+	self._base 		= ko.observable(1).extend({ numeric: 0 , persist: '_base'});
+	self._baseP 	= ko.observable(0).extend({ numeric: 2 , persist: '_baseP'});
+	self._class 	= ko.observable(1).extend({ numeric: 0 , persist: '_class'});
+	self._classP 	= ko.observable(0).extend({ numeric: 2 , persist: '_classP'});
+	self._classRank	= ko.observable(1).extend({ numeric: 0 , persist: '_classRank'});
 	
 	//calculate the total base experience using the exp table provided;
 	self._baseExp	= ko.computed(function(){
@@ -72,19 +72,19 @@ var Character = function(){
 var Cards = function(){
 	var self = this;
 	
-	self._card1 	= ko.observable(0).extend({ numeric: 0 });
-    self._card2 	= ko.observable(0).extend({ numeric: 0 });
-    self._card3 	= ko.observable(0).extend({ numeric: 0 });
-    self._card4 	= ko.observable(0).extend({ numeric: 0 });
-    self._card5 	= ko.observable(0).extend({ numeric: 0 });
-    self._card6 	= ko.observable(0).extend({ numeric: 0 });
-    self._card7 	= ko.observable(0).extend({ numeric: 0 });
-    self._card8 	= ko.observable(0).extend({ numeric: 0 });
-    self._card9 	= ko.observable(0).extend({ numeric: 0 });
-    self._card10 	= ko.observable(0).extend({ numeric: 0 });
-    self._card11 	= ko.observable(0).extend({ numeric: 0 });
-    self._card12 	= ko.observable(0).extend({ numeric: 0 });
-    self._card13 	= ko.observable(0).extend({ numeric: 0 });
+	self._card1 	= ko.observable(0).extend({ numeric: 0 , persist: '_card1'});
+    self._card2 	= ko.observable(0).extend({ numeric: 0 , persist: '_card2'});
+    self._card3 	= ko.observable(0).extend({ numeric: 0 , persist: '_card3'});
+    self._card4 	= ko.observable(0).extend({ numeric: 0 , persist: '_card4'});
+    self._card5 	= ko.observable(0).extend({ numeric: 0 , persist: '_card5'});
+    self._card6 	= ko.observable(0).extend({ numeric: 0 , persist: '_card6'});
+    self._card7 	= ko.observable(0).extend({ numeric: 0 , persist: '_card7'});
+    self._card8 	= ko.observable(0).extend({ numeric: 0 , persist: '_card8'});
+    self._card9 	= ko.observable(0).extend({ numeric: 0 , persist: '_card9'});
+    self._card10 	= ko.observable(0).extend({ numeric: 0 , persist: '_card10'});
+    self._card11 	= ko.observable(0).extend({ numeric: 0 , persist: '_card11'});
+    self._card12 	= ko.observable(0).extend({ numeric: 0 , persist: '_card12'});
+    self._card13 	= ko.observable(0).extend({ numeric: 0 , persist: '_card13'});
 	
 	//calculate the total avalible base experience from cards
 	self._tBaseExp 	= ko.computed(function() {
